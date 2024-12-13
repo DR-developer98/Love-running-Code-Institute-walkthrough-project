@@ -100,3 +100,36 @@ main {
 footer {
     background-color: orange;
 }
+
+/*media query (768px) tablet screen and larger*/
+@media screen and (min-width: 768px) {
+    /*1.Header*/
+    nav {
+        display: block;
+        position: relative;
+        box-shadow: none;
+        width: fit-content;
+        /*This is so that the content won't stick to the edge of the screen*/
+        padding-right: 1rem;
+    }
+    /*2.With the abovementioned code, we still see the X and the elements of the navbar are
+    stacked on top of each other. We need the <ul> with id="menu" to be a flex element, 
+    so that we can align the <li>'s horizontally.*/
+    #menu {
+        display: flex;
+    }
+
+    /*3.Let's add some breathing space between the element of the navbar*/
+    /*Let's target the children of the element with id set to "menu"*/
+    #menu > li {
+        padding-left: 1rem;
+    }
+
+    /*4.Great, now we need to get rid of the X, since we don't need it anymore. 
+    In order to do this, we'll target the .nav-toggle-label and hide it*/
+    .nav-toggle-label {
+        display: none;
+    }
+
+    
+}
