@@ -91,6 +91,9 @@ main {
     background-color: lightblue;
     /*main content takes up most space so that the footer is pushed to the very bottom*/
     flex: 1 0 auto;
+    /*main content is now covered up by header (because of it being taken out of the flow), so 
+    let's give it a margin*/
+    margin-top: 40px;
 }
 
 /*footer*/
