@@ -151,6 +151,13 @@ footer {
         /*push main content down to accomodate larger header*/
         margin-top: 75px;
     }
+}
 
-    
+/*media query 992px small laptops screen*/
+@media screen and (min-width: 992px) {
+    /*6.We now want the links in the navbar to be underlined when hovered over.
+    This is of course only applicable when the user is navigating using a mouse*/
+    #menu  a:hover {
+        border-bottom: 1px solid #3a3a3a;
+    }
 }
