@@ -131,5 +131,26 @@ footer {
         display: none;
     }
 
+    /*5.Let's now make the logo stand out more. For this we'll increase the font-size,
+    we'll give it some line-height for some more space at the top and then add some margin 
+    at the left and the right (0 0,5rem).*/
+
+    #logo {
+        font-size: 280%;
+        /*line-height sets the distance between lines of text*/
+        line-height: 75px;
+        margin: 0 0,5rem;
+        /*Now the top of the <main> is hidden again. This is because the header is now 75px high 
+        (you can see this by hovering over the header in the developer tools preview), which is higher
+        than the margin we've given to the <main>. We can adjust this by asigning the margin a value
+        higher than 75px*/
+    }
+
+    /*main*/
+    main {
+        /*push main content down to accomodate larger header*/
+        margin-top: 75px;
+    }
+
     
 }
