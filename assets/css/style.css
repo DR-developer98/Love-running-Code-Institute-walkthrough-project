@@ -26,6 +26,11 @@ header {
     z-index: 99;
     width: 100%;
     box-shadow: 0 2px 2px #3a3a3a;
+    /*for the X of the dropdown menu is placed next to the logo*/
+    display: flex;
+    /*this adds space between the logo and the dropdown menu*/
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 header a {
@@ -46,7 +51,7 @@ h1 {
     list-style-type: none;
 }
 
-#menu > li {
+#menu>li {
     margin-bottom: 1em;
 }
 
@@ -58,11 +63,27 @@ nav {
     position: absolute;
     background-color: #ffffff;
     padding: 0 1rem;
-    box-shadow: 0 2px 2px #3a3a3a; 
+    box-shadow: 0 2px 2px #3a3a3a;
     width: 100%;
     left: 0;
     display: none;
+    top: 100%;
+}
 
+/*toggle dropdown menu*/
+/*When the input type="checkbox" with id="nav-toggle" is checked, then all its <nav> siblings will
+be displayed stacked on top of each other (display: block;)*/
+#nav-toggle:checked~nav {
+    display: block;
+}
+
+/*we don't need the checkbox to toggle open the dropdown menu; clicking on the X yields the same result*/
+#nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    font-size: 2rem;
 }
 
 /*main*/
