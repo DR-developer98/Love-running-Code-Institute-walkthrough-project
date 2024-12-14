@@ -18,6 +18,13 @@ body {
     font-family: 'Lato', sans-serif;
 }
 
+h1, h2, h3 {
+    font-family: 'Rubik', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #252525;
+}
+
 /*header*/
 header {
     background-color: #ffffff;
@@ -36,13 +43,6 @@ header {
 header a {
     text-decoration: none;
     color: inherit;
-}
-
-h1 {
-    font-family: 'Rubik', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #252525;
 }
 
 #menu {
@@ -101,6 +101,29 @@ main {
     height: 600px;
     width: 100%;
     background: url("../image/hero-image.webp") no-repeat center center/cover;
+    position: relative;
+}
+
+#cover-text {
+    /*Final rgba value sets the opacity of the color, so it is semi-transparent*/
+    background-color: rgba(241, 109, 107, 0.7);
+    font-size: 130%;
+    /*This is to ensure the <div> has a relative position with respect the the #hero section*/
+    position: absolute;
+    /*We'll shift the <div> upwards a bit, so that it doesn't cover the face of the runner 
+    in the hero image*/
+    bottom: 30px;
+    /*80% width, so it doesn't cover the whole width of the screen*/
+    width: 80%;
+    min-height: 200px;
+    /*Padding-top, so the text doesn't stick to the top of the cover-text div*/
+    padding-top: 40px;
+    /*To space it out a bit from the left of the screen*/
+    padding-left: 10px;
+}
+
+#cover-text > h2, #cover-text > h3 {
+    color: #ffffff;
 }
 
 /*footer*/
@@ -178,6 +201,11 @@ by means of the font-size property*/
     main {
         /*push main content down to accomodate larger header*/
         margin-top: 75px;
+    }
+
+    #cover-text {
+        width: 300%;
+        right: 50px;
     }
 }
 
