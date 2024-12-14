@@ -97,8 +97,29 @@ main {
 }
 
 /*footer*/
-footer {
-    background-color: orange;
+/*Here I am after adding the id="social-networks" to the <ul> in the footer*/
+/*We are gonna change the BG-C of the footer, so we won't need the original rule. Let's delete it*/
+#social-networks {
+    /*The icons are basically text, so we can center them like so*/
+    text-align: center;
+    /*This is for adding some breathing space above and below the icons*/
+    padding: 20px 0;
+    /*This is so we can display them next to each other*/
+    display: flex;
+    /*This is so they are spaced evenly along the horizontal ax*/
+    justify-content: space-evenly;
+    /*This so the bullet points aren't shown anymore*/
+    list-style-type: none;
+}
+
+/*Let's now style the icons. Since they're basically text, we can enlarge them 
+by means of the font-size property*/
+#social-networks i {
+    font-size: 160%;
+    /*add some more breathing space*/
+    padding: 5%;
+    /*Give them same color as the rest of the text*/
+    color: #3a3a3a;
 }
 
 /*media query (768px) tablet screen and larger*/
