@@ -88,12 +88,26 @@ be displayed stacked on top of each other (display: block;)*/
 
 /*main*/
 main {
-    background-color: lightblue;
+    /*Since we are gonna use an image as background, we won't need the BG-C, so let's delete it*/
     /*main content takes up most space so that the footer is pushed to the very bottom*/
     flex: 1 0 auto;
     /*main content is now covered up by header (because of it being taken out of the flow), so 
     let's give it a margin*/
     margin-top: 40px;
+}
+
+/*Hero id styles*/
+#hero {
+    /*Let's give the section enough height for the image to show up*/
+    height: 600px;
+    /*Width of 100% so the image spans the entire width of the screen*/
+    width: 100%;
+    /*background shorthand. Let's add the URL of the image we've just added to 
+    the images folder inside assets by means of a relative path*/
+    /*we want the image to not repeat -> norepeat, 
+    to be centered both horizontally and vertically -> center center
+    and to fill the element with the image, even if is means stretching/cropping it -> cover*/
+    background: url("../image/hero-image.webp") no-repeat center center/cover;
 }
 
 /*footer*/
