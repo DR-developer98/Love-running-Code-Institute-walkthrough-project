@@ -1,31 +1,33 @@
-/*Google fonts import*/
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Oswald:wght@200;300;400;500;600;700&display=swap');
 
-/*asterisk wildcard selector to override the default Browser rules*/
+/* Asterisk wildcard selector to override default styles added by the browser */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-/*General styles*/
+/* General styles */
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    /*Generic project styles*/
+    /* Generic project styles */
     color: #3a3a3a;
     font-family: 'Lato', sans-serif;
 }
 
-h1, h2, h3 {
-    font-family: 'Rubik', sans-serif;
+h1,
+h2,
+h3 {
+    font-family: 'Oswald', sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #252525;
 }
 
-/*header*/
+/* Header */
 header {
     background-color: #ffffff;
     padding: 0 1rem;
@@ -33,9 +35,7 @@ header {
     z-index: 99;
     width: 100%;
     box-shadow: 0 2px 2px #3a3a3a;
-    /*for the X of the dropdown menu is placed next to the logo*/
     display: flex;
-    /*this adds space between the logo and the dropdown menu*/
     justify-content: space-between;
     align-items: baseline;
 }
@@ -59,25 +59,23 @@ header a {
     border-bottom: 1px solid #3a3a3a;
 }
 
+/* Navbar styles with dropdown toggle */
 nav {
     position: absolute;
     background-color: #ffffff;
-    padding: 0 1rem;
-    box-shadow: 0 2px 2px #3a3a3a;
     width: 100%;
     left: 0;
+    padding: 0 1rem;
+    box-shadow: 0 2px 2px #3a3a3a;
     display: none;
     top: 100%;
 }
 
-/*toggle dropdown menu*/
-/*When the input type="checkbox" with id="nav-toggle" is checked, then all its <nav> siblings will
-be displayed stacked on top of each other (display: block;)*/
+/* Nav toggle */
 #nav-toggle:checked~nav {
     display: block;
 }
 
-/*we don't need the checkbox to toggle open the dropdown menu; clicking on the X yields the same result*/
 #nav-toggle {
     display: none;
 }
@@ -86,22 +84,36 @@ be displayed stacked on top of each other (display: block;)*/
     font-size: 2rem;
 }
 
-/*main*/
+/* Main content */
 main {
-    /*Since we are gonna use an image as background, we won't need the BG-C, so let's delete it*/
-    /*main content takes up most space so that the footer is pushed to the very bottom*/
+    /* Make main element take up any surplus space to push footer down */
     flex: 1 0 auto;
-    /*main content is now covered up by header (because of it being taken out of the flow), so 
-    let's give it a margin*/
-    margin-top: 40px;
+    margin-top: 47px;
 }
 
-/*Hero id styles*/
+/* Hero section */
 #hero {
     height: 600px;
     width: 100%;
-    background: url("../image/hero-image.jpg") no-repeat center center/cover;
+    background: url("../images/hero-image.webp") no-repeat center center/cover;
     position: relative;
+}
+
+#cover-text {
+    /* Final rgba value sets the opacity so it is semi-transparent */
+    background-color: rgba(241, 109, 107, .7);
+    font-size: 130%;
+    position: absolute;
+    bottom: 30px;
+    width: 80%;
+    min-height: 200px;
+    padding-top: 40px;
+    padding-left: 10px;
+}
+
+#cover-text>h2,
+#cover-text>h3 {
+    color: #ffffff;
 }
 
 /* Reasons section */
@@ -116,8 +128,8 @@ main {
     font-size: 280%;
 }
 
-#benefits-physical > div,
-#benefits-mental > div {
+#benefits-physical>div,
+#benefits-mental>div {
     line-height: 20px;
     margin-bottom: 20px;
 }
@@ -131,181 +143,131 @@ main {
     margin: 5px 0;
 }
 
-/*benefits-image style*/
-#circle-cover-background {
+#circle-cover-bg {
+    background: url('../images/reasons-image.webp') no-repeat top center / cover;
     height: 90vw;
     width: 90vw;
-    background: url ("../images/reasons-image.jpg") no-repeat top center / cover;
-    position: relative;
     margin-bottom: 20px;
-    /*makes the square a circle*/
+    /* Makes the square image into a circle */
     border-radius: 50%;
-    /*makes sure the image doesn't take too much space on larger screen/landscape held mobile screens*/
-    max-height: 300px;
     max-width: 300px;
+    max-height: 300px;
 }
 
-/*we want the image to be centered, so we add flex-box properties to it*/
 #benefits-image {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
-/*cover-text id styles*/
-#cover-text {
-    /*Final rgba value sets the opacity of the color, so it is semi-transparent*/
-    background-color: rgba(241, 109, 107, 0.7);
-    font-size: 130%;
-    /*This is to ensure the <div> has a relative position with respect the the #hero section*/
-    position: absolute;
-    /*We'll shift the <div> upwards a bit, so that it doesn't cover the face of the runner 
-    in the hero image*/
-    bottom: 30px;
-    /*80% width, so it doesn't cover the whole width of the screen*/
-    width: 80%;
-    min-height: 200px;
-    /*Padding-top, so the text doesn't stick to the top of the cover-text div*/
-    padding-top: 40px;
-    /*To space it out a bit from the left of the screen*/
-    padding-left: 10px;
-}
-
-#cover-text > h2, #cover-text > h3 {
-    color: #ffffff;
-}
-
-/*footer*/
-/*Here I am after adding the id="social-networks" to the <ul> in the footer*/
-/*We are gonna change the BG-C of the footer, so we won't need the original rule. Let's delete it*/
+/* Footer */
 #social-networks {
-    /*The icons are basically text, so we can center them like so*/
     text-align: center;
-    /*This is for adding some breathing space above and below the icons*/
     padding: 20px 0;
-    /*This is so we can display them next to each other*/
     display: flex;
-    /*This is so they are spaced evenly along the horizontal ax*/
     justify-content: space-evenly;
-    /*This so the bullet points aren't shown anymore*/
     list-style-type: none;
 }
 
-/*Let's now style the icons. Since they're basically text, we can enlarge them 
-by means of the font-size property*/
 #social-networks i {
     font-size: 160%;
-    /*add some more breathing space*/
     padding: 5%;
-    /*Give them same color as the rest of the text*/
     color: #3a3a3a;
 }
 
-/*media query (768px) tablet screen and larger*/
+/* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
-    /*1.Header*/
+
+    /* Header */
     nav {
         display: block;
         position: relative;
         box-shadow: none;
         width: fit-content;
-        /*This is so that the content won't stick to the edge of the screen*/
         padding-right: 1rem;
     }
-    /*2.With the abovementioned code, we still see the X and the elements of the navbar are
-    stacked on top of each other. We need the <ul> with id="menu" to be a flex element, 
-    so that we can align the <li>'s horizontally.*/
+
     #menu {
         display: flex;
     }
 
-    /*3.Let's add some breathing space between the element of the navbar*/
-    /*Let's target the children of the element with id set to "menu"*/
-    #menu > li {
+    #menu>li {
         padding-left: 1rem;
     }
 
-    /*4.Great, now we need to get rid of the X, since we don't need it anymore. 
-    In order to do this, we'll target the .nav-toggle-label and hide it*/
     .nav-toggle-label {
         display: none;
     }
 
-    /*5.Let's now make the logo stand out more. For this we'll increase the font-size,
-    we'll give it some line-height for some more space at the top and then add some margin 
-    at the left and the right (0 0,5rem).*/
-
     #logo {
         font-size: 280%;
-        /*line-height sets the distance between lines of text*/
         line-height: 75px;
-        margin: 0 0,5rem;
-        /*Now the top of the <main> is hidden again. This is because the header is now 75px high 
-        (you can see this by hovering over the header in the developer tools preview), which is higher
-        than the margin we've given to the <main>. We can adjust this by asigning the margin a value
-        higher than 75px*/
+        margin: 0 0.5rem;
     }
 
-    /*main*/
+    /* Main content */
     main {
-        /*push main content down to accomodate larger header*/
-        margin-top: 75px;
+        /* Push main content down to accommodate larger header */
+        margin-top: 79px;
     }
 
+    /* Hero */
     #cover-text {
-        width: 300%;
+        width: 300px;
         right: 50px;
     }
 
-    /*Reasons section*/
-    #benefits-physical, #benefits-mental {
+    /* Reasons section */
+    #benefits-physical,
+    #benefits-mental {
         display: flex;
         flex-direction: column;
         width: 100%;
     }
 
-    #benefits-physical > div, #benefits-mental > div {
-        width: 75%%;
+    #benefits-physical>div,
+    #benefits-mental>div {
+        width: 75%;
     }
 
-    #benefit-mental > div {
+    #benefits-mental>div {
         text-align: end;
         align-self: flex-end;
     }
+
 }
 
-/*media query 992px small laptops screen*/
+/* Large devices (laptops and desktops, 992px and up) */
 @media screen and (min-width: 992px) {
-    /*6.We now want the links in the navbar to be underlined when hovered over.
-    This is of course only applicable when the user is navigating using a mouse*/
     #menu a:hover {
         border-bottom: 1px solid #3a3a3a;
     }
 }
 
-@media screen and (min-width: 1200px) {
-#benefits {
-    display: flex;
-    flex-direction: row;
-}
+@media screen and (min-width: 1200px) {    
+    /* Reasons section */
+    #benefits {
+        display: flex;
+        flex-direction: row;
+    }
 
-#benefits > div {
-    flex: 1;
-}
+    #benefits > div {
+        flex: 1;
+    }
 
-#benefits-image {
-    order: 0;
-}
+    #benefits-image {
+        order: 0
+    }
 
-#benefits-mental {
-    order: 1;
-}
+    #benefits-mental {
+        order: 1;
+    }
 
-#benefits-physical > div {
-    align-self: flex-end;
-}
+    #benefits-mental > div {
+        align-self: flex-start;
+    }
 
-#benefits-mental > div {
-    align-self: flex-start;
-}
+    #benefits-physical > div {
+        align-self: flex-end;
+    }
 }
