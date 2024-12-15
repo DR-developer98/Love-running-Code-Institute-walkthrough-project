@@ -160,6 +160,37 @@ main {
     justify-content: center;
 }
 
+/*Meet-ups section*/
+#times {
+    background: url ("../images/dublin-city.jpg") no-repeat center center / cover;
+    /*Ensures responsivity withou the need for a media query*/
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#times div {
+    /*off-white text for more contrast*/
+    color: #fafafa;
+    /*black transparent background*/
+    background-color: rgba {0, 0, 0, .6};
+    /*some padding to prevent divs from sticking to the edges of the image*/
+    padding: 15px;
+    /*centers text*/
+    text-align: center;
+    /*This will not wrap on screens less 400px wide.
+    Each div will expand to fill the available space on its row*/
+    flex-basis: 200px;
+    flex-grow: 1;
+    /*This is for the white grid around the divs*/
+    border: 2px solid white;
+}
+
+#times h3 {
+    /*the h3's are still very dark, so let's override the h1, h2, h3 styling rule
+    and give them the same color as the as the divs in the #times section*/
+    color: #fafafa;
+}
+
 /* Footer */
 #social-networks {
     text-align: center;
