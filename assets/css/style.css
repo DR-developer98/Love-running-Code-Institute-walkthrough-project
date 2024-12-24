@@ -210,6 +210,18 @@ main {
     color: #3a3a3a;
 }
 
+/* Gallery page styles */
+/* This is so that the photos are as wide as the screen*/
+#photos img {
+    width: 100%;
+}
+
+/*This is to remove the white line in between the photos*/
+#photos {
+    line-height: 0;
+    line-height: 1em;
+}
+
 /* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
 
